@@ -1,4 +1,4 @@
-#staticAPI1 -README-
+#URL_SHORTENER -README-
 ##Installation
 USING: node.js
 
