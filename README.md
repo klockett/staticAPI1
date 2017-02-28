@@ -4,25 +4,25 @@ USING: node.js
 
 Installation: (through Terminal) *Key installs 
 
-git init
+-git init
 
-npm init –y
+-npm init –y
 
-atom ./ (thru atom you will see the package.json)
+-atom ./ (thru atom you will see the package.json)
 
-mkdir src
+-mkdir src
 
-mkdir src/models
+-mkdir src/models
 
-mkdir src/routes
+-mkdir src/routes
 
-touch src/server.js
+-touch src/server.js
 
-touch src/routes/index.js
+-touch src/routes/index.js
 
-touch src/models/db.js (Database will live here)
+-touch src/models/db.js (Database will live here)
 
-mkdir src/routes/api
+-mkdir src/routes/api
 
-touch src/routes/api/url.js
+-touch src/routes/api/url.js
 
