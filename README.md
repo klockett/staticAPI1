@@ -4,7 +4,7 @@ USING: node.js
 
 Installation: (through Terminal) *Key installs 
 
--git init
+- git init
 
 -npm init –y
 
