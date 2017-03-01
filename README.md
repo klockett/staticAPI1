@@ -9,8 +9,6 @@ Installation: (through Terminal) *Key installs
 - npm init (fill out the document info)
 - atom ./ (thru atom you will see the package.json)
 
-- npm init –y
-
 - atom ./ (thru atom you will see the package.json)
 - npm install express --save
 - touch .gitignore
