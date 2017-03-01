@@ -30,6 +30,7 @@ Installation: (through Terminal) *Key installs
 
 
 - touch src/routes/index.js
+- touch src/models/db.js
 
 - mkdir src/routes/api
 
