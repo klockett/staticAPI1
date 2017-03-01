@@ -38,5 +38,7 @@ Installation: (through Terminal) *Key installs
 ##Test
 install Postman
 - test http://localhost:3000/api/urls
+##Example
 
+http://i.imgur.com/flSNny4.png
 
