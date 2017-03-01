@@ -40,5 +40,4 @@ install Postman
 - test http://localhost:3000/api/urls
 ##Example
 
-http://i.imgur.com/flSNny4.png
-
+<a href="http://imgur.com/flSNny4"><img src="http://i.imgur.com/flSNny4b.png" title="source: imgur.com" /></a>
