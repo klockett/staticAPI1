@@ -3,7 +3,7 @@
 USING: node.js
 install Brew (through Terminal)
 nvm install node latest version
-Installation: (through Terminal) *Key installs 
+Installation: (through Terminal) *Key installs
 - mkdir staticAPI1
 - git init
 - npm init (fill out the document info)
@@ -41,3 +41,15 @@ install Postman
 
 ##Example
 <a href="http://imgur.com/flSNny4"><img src="http://i.imgur.com/flSNny4.png" title="source: imgur.com" /></a>
+
+##Database
+- under models folder created db.js, and a url.js files
+- in terminal downloaded Sequelize (npm --save sequelize)
+- in terminal downloaded mysql (npm --save mysql)
+- in terminal download (dotenv) and create (.env file) for the database log-in
+#server
+- download brew install mysql
+- through terminal to start mysql enter(mysql.server start or stop to end session)
+##Test
+install Postman
+- test http://localhost:3000/api/urls
