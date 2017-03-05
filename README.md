@@ -50,6 +50,7 @@ install Postman
 #server
 - download brew install mysql
 - through terminal to start mysql enter(mysql.server start or stop to end session)
+
 ##Test
 install Postman
 - test http://localhost:3000/api/urls
