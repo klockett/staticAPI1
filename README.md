@@ -47,10 +47,10 @@ install Postman
 - in terminal downloaded Sequelize (npm --save sequelize)
 - in terminal downloaded mysql (npm --save mysql)
 - in terminal download (dotenv) and create (.env file) for the database log-in
-#server
+#mySQL
+<a href="http://imgur.com/y65VCaV"><img src="http://i.imgur.com/y65VCaV.png" title="source: imgur.com" /></a>#server
 - download brew install mysql
 - through terminal to start mysql enter(mysql.server start or stop to end session)
-
 ##Test
 install Postman
 - test http://localhost:3000/api/urls
