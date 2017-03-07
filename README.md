@@ -44,8 +44,8 @@ install Postman
 
 ##Database
 - under models folder created db.js, and a url.js files
-- in terminal downloaded Sequelize (npm --save sequelize)
-- in terminal downloaded mysql (npm --save mysql)
+- in terminal downloaded Sequelize (npm i --save sequelize)
+- in terminal downloaded mysql (npm i --save mysql)
 - in terminal download (dotenv) and create (.env file) for the database log-in
 #mySQL
 <a href="http://imgur.com/y65VCaV"><img src="http://i.imgur.com/y65VCaV.png" title="source: imgur.com" /></a>#server
