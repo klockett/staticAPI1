@@ -12,6 +12,7 @@ const body_parser = require('body-parser');
 const shortener = require('./shortener.js');
 //Config
 
+
 const output = shortener.stringGen(6);
 console.log(output);
 const port = process.env.PORT || 3000;

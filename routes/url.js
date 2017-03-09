@@ -1,4 +1,4 @@
-const url = require('../src/models/url');
+var url = require('../src/models/url');
 module.exports = (express)=> {
   const router = express.Router();
 
