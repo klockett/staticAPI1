@@ -19,6 +19,7 @@ const url = sequelize.define('url', {
 });
 
 
+
 sequelize.sync();
 console.log('test');
 exports.sequelize = sequelize;

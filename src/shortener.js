@@ -1,6 +1,6 @@
 
-function returnStringGen(){
-  //random
+
+module.exports = function returnStringGen(){ //random
   var strLength = 6;
 
 
@@ -14,13 +14,12 @@ function returnStringGen(){
 
   }
 
-//stringGen
 
 
 
 return strReturn;
 
 }
-console.log(returnStringGen);
 
-exports.stringGen = returnStringGen;
+//exports.stringGen = returnStringGen;
+//module.exports = returnStringGen()
