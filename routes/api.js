@@ -1,6 +1,7 @@
 module.exports = function (express) {
   const router = express.Router();
 var shortened_url = shortened_url;
+var util = require('../lib/util')
 
 
 router.post('/urls', (req, res) => {

@@ -4,6 +4,7 @@ const express =  require('express');
 const body_parser = require('body-parser');
 
 /* Express*/
+ const util = require('../lib/util');
 
  const app = express();
 
@@ -17,6 +18,8 @@ const shortener = require('./shortener.js');
 //const output = shortener.stringGen(6);
 //console.log(output);
 const port = process.env.PORT || 3000;
+
+  util.debug("Env VAR", process.env.DEBUG)
 
 
 
@@ -32,7 +35,7 @@ app.use('/api', require('../routes/url.js')(express));
 
 // Have Express Listen  on port
 const server = app.listen(port, ()=>{
-  console.log('Server Active on', port);
+  util.debug('Server Active on', port);
 
 });
 

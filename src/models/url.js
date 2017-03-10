@@ -1,4 +1,5 @@
 const db = require('./db');
+var util = require('../../lib/util')
 
 exports.create = (payload, err, success) => {
 	db.url.create(payload).then(success).catch(err);
@@ -23,7 +24,8 @@ exports.find = (payload, err, success) => {
 
 //Deletes a genre by specific ID
 exports.destroy = (payload, err, success) => {
-	db.url.find({
+	util.debug("Someone deleted a url", success);
+  db.url.find({
 		where:{id: payload.id,},
 
 	}).then(success).catch(err);

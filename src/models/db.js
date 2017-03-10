@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+var util = require('../../lib/util')
 require('dotenv').config();
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS,
 	{
@@ -14,13 +15,15 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 });
 
 const url = sequelize.define('url', {
-	original:{type:Sequelize.STRING,},
+  original:{type:Sequelize.STRING,},
 	shortened:{type:Sequelize.STRING,}
 });
 
 
 
+
+
 sequelize.sync();
-console.log('test');
+util.debug('sync test was successful', 'success');
 exports.sequelize = sequelize;
 exports.url = url;
