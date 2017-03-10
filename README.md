@@ -56,3 +56,8 @@ install Postman
 - test http://localhost:3000/api/urls
 
 <a href="http://imgur.com/6xCgjB8"><img src="http://i.imgur.com/6xCgjB8.png" title="source: imgur.com" /></a>
+
+##Utility Tool
+- created lib fold  with a touching util.js file
+- replaced my console.log() with util.debug() to log
+#Examples
