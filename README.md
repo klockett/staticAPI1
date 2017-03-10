@@ -62,3 +62,5 @@ install Postman
 - replaced my console.log() with util.debug() to log
 
 #Examples
+<a href="http://imgur.com/r20l0V1"><img src="http://i.imgur.com/r20l0V1.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/mJfIxC2"><img src="http://i.imgur.com/mJfIxC2.png" title="source: imgur.com" /></a>
