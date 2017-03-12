@@ -64,3 +64,10 @@ install Postman
 #Examples
 <a href="http://imgur.com/r20l0V1"><img src="http://i.imgur.com/r20l0V1.png" title="source: imgur.com" /></a>
 <a href="http://imgur.com/mJfIxC2"><img src="http://i.imgur.com/mJfIxC2.png" title="source: imgur.com" /></a>
+##Coding Styling Guide
+- added eslintrc.json to root
+- thru terminal add (npm i --save-dev --save eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react)
+- added linter-eslint package
+- thru terminal add (npm i --save-dev --save eslint-plugin-jsx-a11y)
+- thru terminal (npm install --save chalk)
+- note: eslint allowed me to bring some of the code to standard format, chalk allowed to use different coloring so I can seperated my output to my liking.
