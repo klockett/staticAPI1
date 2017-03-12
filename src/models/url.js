@@ -1,20 +1,20 @@
 const db = require('./db');
-var util = require('../../lib/util')
+const util = require('../../lib/util');
 
 exports.create = (payload, err, success) => {
 	db.url.create(payload).then(success).catch(err);
 }
 
-//Gets all genres
+// Gets all genres
 exports.findAll = (err, success) => {
-	db.url.findAll().then(success).catch(err);
+	 db.url.findAll().then(success).catch(err);
 }
 
-//Gets a genre by specific ID
+// Gets a genre by specific ID
 
 exports.find = (payload, err, success) => {
 	db.url.find({
-		where:{id: payload.id,},
+	 where: { id: payload.id,},
 		include: [{
 			all: true,
 			nested: true,
@@ -22,7 +22,7 @@ exports.find = (payload, err, success) => {
 	}).then(success).catch(err);
 }
 
-//Deletes a genre by specific ID
+// Deletes a genre by specific ID
 exports.destroy = (payload, err, success) => {
 	util.debug("Someone deleted a url", success);
   db.url.find({
@@ -31,7 +31,7 @@ exports.destroy = (payload, err, success) => {
 	}).then(success).catch(err);
 }
 
-//Updates a genre by specific ID
+// Updates a genre by specific ID
 exports.update = (payload, err, success) => {
 	db.url.find({
 		where:{id: payload.id,},

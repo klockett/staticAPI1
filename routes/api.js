@@ -1,26 +1,19 @@
-module.exports = function (express) {
+module.exports = (express) => {
   const router = express.Router();
-var shortened_url = shortened_url;
-var util = require('../lib/util')
 
 
-router.post('/urls', (req, res) => {
-  var short = require('../src/shortener');
-  req.body.shortened = shortener();
-  url.create(req.body,
+  router.post('/urls', (req, res) => {
+    const short = require('../src/shortener');
+     req.body.shortened = shortener();
+    url.create(req.body,
      (err) => {
-    res.status(500).json(err);
-  }, (data)=>{
-    res.status(200).json(data);
-  })
+       res.status(500).json(err);
+     }, (data) => {
+       res.status(200).json(data);
+     });
+  });
 
-});
-
-
-
-
-
-  /*router.post("/urls",(req, res)=> {
+/* router.post("/urls",(req, res)=> {
   //  res.json({hi:true});
     const shortener = require('../src/shortener');
     res.json({
@@ -29,6 +22,5 @@ router.post('/urls', (req, res) => {
   });
 
 });*/
-
   return router;
 };
