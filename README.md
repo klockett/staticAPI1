@@ -72,6 +72,8 @@ install Postman
 - thru terminal add (npm i --save-dev --save eslint-plugin-jsx-a11y)
 - thru terminal (npm install --save chalk)
 - note: eslint allowed me to bring some of the code to standard format, chalk allowed to use different coloring so I can seperated my output to my liking.
+
+
 ##Unit Test
 - in terminal (npm install mocha --save-dev)
 - in terminal (mkdir test also  touch test/__api.js)
