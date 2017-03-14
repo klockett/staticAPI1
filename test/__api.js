@@ -1,5 +1,4 @@
 var request = require('supertest');
-
 describe('API', function () {
   var server;
 
