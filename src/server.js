@@ -28,7 +28,7 @@ util.debug('Env VAR', process.env.DEBUG)
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: true }));
 
-app.use('/api', require('../routes/url.js')(express));
+app.use('/api', require('./routes/url.js')(express));
 
 // Have Express Listen  on port
 const server = app.listen(port, () => {
