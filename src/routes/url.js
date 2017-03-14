@@ -1,5 +1,5 @@
 const url = require('../../src/models/url');
-const shortener = require('../../src/shortener');
+// const shortener = require('../../src/shortener');
 const util = require('../../lib/util');
 
 module.exports = (express) => {
@@ -50,7 +50,7 @@ module.exports = (express) => {
 
 // post
   router.post('/urls', (req, res) => {
-    const short = require('../../src/shortener');
+    const shortener = require('../../src/shortener');
     req.body.shortened = shortener();
     url.create(req.body,
     (err) => {
@@ -59,7 +59,7 @@ module.exports = (express) => {
       util.debug('Someone input a url', data, 'success');
 
       res.status(200).json(data);
-    })
+    });
   });
 
   router.post('/urls', (req, res) => {
@@ -69,7 +69,7 @@ module.exports = (express) => {
        res.status(500).json(err);
      }, (data) => {
        res.status(200).json(data);
-     })
+     });
   });
   return router;
 };

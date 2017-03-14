@@ -1,12 +1,12 @@
-const shortener = require('../../src/shortener');
+// const shortener = require('../../src/shortener');
 
 module.exports = (express) => {
   const router = express.Router();
 
 
   router.post('/urls', (req, res) => {
-    const short = require('../../src/shortener');
-     req.body.shortened = shortener();
+    const shortener = require('../../src/shortener');
+    req.body.shortened = shortener();
     url.create(req.body,
      (err) => {
        res.status(500).json(err);
