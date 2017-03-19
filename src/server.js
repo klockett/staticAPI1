@@ -32,7 +32,7 @@ app.use('/api', require('./routes/url.js')(express));
 
 // Have Express Listen  on port
 const server = app.listen(port, () => {
-  util.debug('Server Active on', port, 'success');
+  console.log('Server Active on', port, 'success');
 });
 
 // Export the server

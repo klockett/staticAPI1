@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,7 +23,11 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.2",
     "mysql": "^2.13.0",
+    "npm_util_tool": "^1.0.6",
+    "pg": "^6.1.4",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.2",
+    "sqlite3": "^3.1.8",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
@@ -34,6 +39,7 @@
     "eslint-plugin-react": "^6.10.0",
     "expect": "^1.20.2",
     "mocha": "^3.2.0",
+    "npm_util_tool": "^1.0.3",
     "supertest": "^3.0.0"
   }
 }
