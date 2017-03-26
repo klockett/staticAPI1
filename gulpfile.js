@@ -7,36 +7,19 @@ const
   minimist = require('minimist'),
   bump = require('npm_util_tool').updateVersion,
 
-  devBuild = (process.env.NODE_ENV !== 'production'),
 
-
-
-  packageJson = () => {
-    return JSON.parse(npm_util_tool.readFileSync('./package.json', 'utf8'));
-  },
-
-  releaseType = {
-    string: 'r',
-    default: 'patch'
-  },
-
-  options = minimist(process.argv.slice(2), releaseType);
 
 gulp.task('run', ['versionbump', 'build', 'src']);
 
 gulp.task('versionbump', function() {
-  const pkg = packageJson();
-  const version = pkg.version;
   console.log('Upgrading from v' + version);
   const newVersion = bump(version,options.r);
   console.log('to new version, ' + newVersion);
-  pkg.version = newVersion;
 
-  return gulp.src('./package.json', {base:'./package.json'})
+  return gulp.src('./gulpfile.js', {base:'./gulpfile.js'})
     .pipe(jeditor({
-      'version':newVersion
     }))
-    .pipe(gulp.dest('./package.json'));
+    .pipe(gulp.dest('./gulpfile.js'));
 });
 
 gulp.task('build', function() {
