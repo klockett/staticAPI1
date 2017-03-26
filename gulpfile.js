@@ -2,21 +2,17 @@
 const
   gulp = require('gulp'),
   newer = require('gulp-newer'),
-  fs = require('fs');
+  npm_util_tool = require('npm_util_tool');
   jeditor = require("gulp-json-editor");
   minimist = require('minimist'),
-  bump = require('lee-fs-utility-debugger').updateVersion,
+  bump = require('npm_util_tool').updateVersion,
 
   devBuild = (process.env.NODE_ENV !== 'production'),
 
-  folder = {
-    root: ['!node_modules/', '!test/', './package.json', './README.md'],
-    src: 'src/*',
-    build:'build/'
-  },
+
 
   packageJson = () => {
-    return JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+    return JSON.parse(npm_util_tool.readFileSync('./package.json', 'utf8'));
   },
 
   releaseType = {
