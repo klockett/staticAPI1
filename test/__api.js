@@ -1,63 +1,93 @@
+onst express = require('express');
 const expect = require('chai').expect;
 const request = require('supertest');
-const chai = require('chai');
-const server = require('../src/server.js');
+const shortUrl = require('../src/shortener.js');
+const app = express();
 
-const should = chai.should();
-// const server = require('../src/server.js');
 
-describe('CRUD Routes', () => {
-  beforeEach(() => { // eslint-disable-line
-    server = require('../src/server.js'); // eslint-disable-line
+describe('URL Routes', () => {
+  let server;
+
+  beforeEach(() => {
+    server = require('../src/server.js');
   });
 
-  afterEach(() => { // eslint-disable-line
+  afterEach(() => {
     server.close();
   });
-  // Test for Multiple Apps
-  it('should GET /api/urls returns all urls', (done) => {
+
+  // This test for multiple urls
+  it('GET /api/url returns all', (done) => {
     request(server)
-      .get('/api/urls')
+    .get('/api/urls')
+    .set('Accept', 'application/json')
+    .expect('Content-Type', /json/)
+    .expect((res) => {
+      const url = res.body;
+
+      // Save one single url
+      this.url = url[0];
+
+      expect(url.length).to.be.above(0);
+    })
+    .end(done);
+  });
+
+// This test for creating a shortened url
+  it('POST returns a generated short URL of 6 characters', (done) => {
+    request(server)
+      .post('/api/urls')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
-      .expect((res) => {
-        const urls = res.body;
-        // Save one single app from the list to test on in later tests
-        this.url = urls.urls[0];
-
-        // console.log(this.url);
-
-        expect(urls.length);
+      .expect((req) => {
+        const id = shortUrl.shortUrl();
+        expect(id).to.have.length('7');
       })
       .end(done);
   });
-  // Test for a single app
-  it('should GET /api/url/:id return a URL object by id with its id, original URL, and short URL.', (done) => {
+
+  // This tests for a single URL
+  it('GET /api/urls/', (done) => {
     request(server)
-      .get('/api/urls/' + this.url._id)
-      .set('Accept', 'application/json')
-      .expect('Content-Type', /json/)
-      .expect((res) => {
-        const url = res.body;
-        expect(url).to.have.property('longurl');
-        expect(url).to.have.property('shorturl');
-      })
+        .get('/api/urls/' + this.url.id)
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(() => {
+          expect(this.url).to.have.property('createdOn');
+          expect(this.url).to.have.property('main_url');
+          expect(this.url).to.have.property('updatedOn');
+          expect(this.url).to.have.property('short_url');
+        })
       .end(done);
   });
-   // Test for a single app
-  it('should POST url to /api/url/ return a URL object by id with its id, original URL, and short URL.', (done) => {
-    const newurl = {
-      _id: '1234567abc',
-      longurl: 'www.url.com',
-      shorturl: 'xH45nz9',
+
+  // This updates the test
+  it('POST /api/urls/', (done) => {
+    const body = {
+      main_url: 'www.fullsail.edu',
+      short_url: '3y43Om',
     };
-
     request(server)
-      .post('/api/urls/')
-      .send(newurl)
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
+        .put('/api/urls/' + this.url)
+        .send(body)
+        .expect(() => {
+          expect(this.url).to.have.property('createdOn');
+          expect(this.url).to.have.property('main_url');
+          expect(this.url).to.have.property('updatedOn');
+          expect(this.url).to.have.property('short_url');
+        })
+      .end(done);
+  });
+
+  // This deletes a url based on its id
+  it('DELETE This deletes one URL based on its id', (done) => {
+    request(server)
+   .get('/api/urls' + this.url)
+   .set('Accept', 'application/json')
+   .expect('Content-Type', /json/);
+    app.delete('/api/url/' + this.url, (req, res) => {
+      res.status(200);
+    });
+    done();
   });
 });
