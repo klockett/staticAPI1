@@ -5,6 +5,15 @@ const util = require('../../lib/util');
 module.exports = (express) => {
   const router = express.Router();
 
+  // This GETs All
+  router.get('/urls', (req, res) => {
+    url.findAll((err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.status(200).json(data);
+    });
+  });
+
 
 // get
   router.get('/urls', (req, res) => {
@@ -48,6 +57,15 @@ module.exports = (express) => {
  });
 });*/
 
+// This updates
+  router.get('/urls', (req, res) => {
+   req.body.id = req.params.id;
+   url.update(req.body, (err) => {
+     res.status(500).json(err);
+   }, (data) => {
+     res.status(200).json(data);
+   });
+  });
 // post
   router.post('/urls', (req, res) => {
     const shortener = require('../../src/shortener');
