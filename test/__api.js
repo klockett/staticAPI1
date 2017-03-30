@@ -1,7 +1,7 @@
-onst express = require('express');
+const express = require('express');
 const expect = require('chai').expect;
 const request = require('supertest');
-const shortUrl = require('../src/shortener.js');
+const shortUrl = require('../lib/util.js');
 const app = express();
 
 

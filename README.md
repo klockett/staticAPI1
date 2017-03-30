@@ -80,3 +80,4 @@ install Postman
 - in terminal ( npm i -g mocha) to load globally
 - in terminal (npm i --save-dev expect)
 - in (npm i supertest --save-dev)
+- Type (mocha) to test
